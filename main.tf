@@ -8,7 +8,7 @@ terraform {
    cloud {
     organization = "HCL-TERRA-TEAM"
     workspaces {
-      tags = ["managed-by-github-actions"]
+      name = "Github-Final"
     }
    } 
 

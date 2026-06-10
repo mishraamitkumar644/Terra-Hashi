@@ -16,11 +16,6 @@ on:
         required: false
         default: "."
         type: string
-      tfc_organization:
-        description: "Terraform Cloud organization name"
-        required: true
-        type: string
-        default: "HCL-TERRA-TEAM"
 
 permissions:
   id-token: write
@@ -37,7 +32,6 @@ jobs:
     with:
       environment: ${{ inputs.environment }}
       working_directory: ${{ inputs.working_directory }}
-      tfc_organization: ${{ inputs.tfc_organization }}
     secrets: inherit
 
   # ── 2. VALIDATE ───────────────────────────────────────────────────────────
@@ -48,7 +42,6 @@ jobs:
     with:
       environment: ${{ inputs.environment }}
       working_directory: ${{ inputs.working_directory }}
-      tfc_organization: ${{ inputs.tfc_organization }}
     secrets: inherit
 
   # ── 3a. TFLINT ───────────────────────────────────────────────────────────
@@ -89,7 +82,6 @@ jobs:
     with:
       environment: ${{ inputs.environment }}
       working_directory: ${{ inputs.working_directory }}
-      tfc_organization: ${{ inputs.tfc_organization }}
     secrets: inherit
 
   # ── 4. PLAN ──────────────────────────────────────────────────────────────
@@ -100,7 +92,6 @@ jobs:
     with:
       environment: ${{ inputs.environment }}
       working_directory: ${{ inputs.working_directory }}
-      tfc_organization: ${{ inputs.tfc_organization }}
     secrets: inherit
 
   # ── 5. PLAN TO JSON ──────────────────────────────────────────────────────
@@ -111,7 +102,6 @@ jobs:
     with:
       environment: ${{ inputs.environment }}
       working_directory: ${{ inputs.working_directory }}
-      tfc_organization: ${{ inputs.tfc_organization }}
     secrets: inherit
 
   # ── 6. OPA ───────────────────────────────────────────────────────────────
@@ -162,5 +152,4 @@ jobs:
     with:
       environment: ${{ inputs.environment }}
       working_directory: ${{ inputs.working_directory }}
-      tfc_organization: ${{ inputs.tfc_organization }}
     secrets: inherit
