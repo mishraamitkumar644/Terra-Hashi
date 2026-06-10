@@ -20,7 +20,7 @@ on:
         description: "Terraform Cloud organization name"
         required: true
         type: string
-        default: "my-org-name"
+        default: "HCL-TERRA-TEAM"
 
 permissions:
   id-token: write
