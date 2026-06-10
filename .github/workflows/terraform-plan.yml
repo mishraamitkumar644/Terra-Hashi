@@ -10,6 +10,9 @@ on:
         required: false
         type: string
         default: "."
+      tfc_organization:
+        required: true
+        type: string
     secrets:
       AZURE_CLIENT_ID:
         required: true
@@ -18,8 +21,6 @@ on:
       AZURE_SUBSCRIPTION_ID:
         required: true
       TF_API_TOKEN:
-        required: true
-      TF_CLOUD_ORGANIZATION:
         required: true
 
 jobs:
@@ -33,7 +34,7 @@ jobs:
 
     env:
       TF_TOKEN_app_terraform_io: ${{ secrets.TF_API_TOKEN }}
-      TF_WORKSPACE: ${{ secrets.TF_CLOUD_ORGANIZATION }}-${{ inputs.environment }}
+      TF_WORKSPACE: ${{ inputs.tfc_organization }}-${{ inputs.environment }}
 
     steps:
       - name: Checkout repository
