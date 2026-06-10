@@ -64,7 +64,6 @@ jobs:
         run: |
           terraform init \
             -input=false \
-            -reconfigure
 
       - name: Terraform Test
         run: |

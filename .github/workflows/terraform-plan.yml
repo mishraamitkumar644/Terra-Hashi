@@ -64,7 +64,6 @@ jobs:
         run: |
           terraform init \
             -input=false \
-            -reconfigure
 
       # Exit codes: 0=no changes, 1=error, 2=changes found (normal)
       - name: Terraform Plan
